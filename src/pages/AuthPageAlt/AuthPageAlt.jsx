@@ -7,7 +7,7 @@ function AuthPage({ setUser }) {
     // if setUser tru show the login form if its false show the singnp page
     <main>
       <h1>AuthPage</h1>
-      {/* <SignUpForm setUser={setUser} /> */}
+      <SignUpForm setUser={setUser} />
       <LoginForm setUser={setUser} />
     </main>
   );
