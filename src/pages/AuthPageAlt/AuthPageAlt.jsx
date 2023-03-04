@@ -1,5 +1,5 @@
 import React from "react";
-import SignUpForm from "../../components/SignUpForm/SignUpForm";
+import SignUpForm from "../../components/SignUpFormAlt/SignUpFormAlt";
 import LoginForm from "../../components/LoginFormAlt/LoginFormAlt";
 
 function AuthPage({ setUser }) {

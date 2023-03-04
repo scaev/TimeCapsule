@@ -17,7 +17,6 @@ class SignUpForm extends Component {
     });
   };
 
-
   handleSubmit = async (e) => {
     e.preventDefault();
     const formData = { ...this.state };
