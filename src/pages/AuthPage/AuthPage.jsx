@@ -8,13 +8,18 @@ function AuthPage({ setUser }) {
   return (
     // if setUser tru show the login form if its false show the singnp page
     <main>
-      <button onClick={() => setShowSignUp(!showSignUp)}>
-        {showSignUp ? "Log In" : "Sign Up"}
-      </button>
       {showSignUp ? (
-        <SignUpForm setUser={setUser} />
+        <SignUpForm
+          setUser={setUser}
+          showSignUp={showSignUp}
+          setShowSignUp={setShowSignUp}
+        />
       ) : (
-        <LoginForm setUser={setUser} />
+        <LoginForm
+          setUser={setUser}
+          showSignUp={showSignUp}
+          setShowSignUp={setShowSignUp}
+        />
       )}
     </main>
   );

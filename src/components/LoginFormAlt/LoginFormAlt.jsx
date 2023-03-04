@@ -1,8 +1,9 @@
 import { useState } from "react";
 import * as usersService from "../../utilities/users-service";
 import "./style.css";
+import { Link } from "react-router-dom";
 
-export default function LoginForm({ setUser }) {
+export default function LoginForm({ setUser, showSignUp, setShowSignUp }) {
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
@@ -68,7 +69,10 @@ export default function LoginForm({ setUser }) {
             <button type="submit">Sign In</button>
           </form>
           <div class="login-card-footer">
-            Don't have an account? <a href="#">Create a free account.</a>
+            Don't have an account?{" "}
+            <a href="#" onClick={() => setShowSignUp(!showSignUp)}>
+              Create a free account.
+            </a>
           </div>
         </div>
         <div class="login-card-social">

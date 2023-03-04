@@ -129,7 +129,7 @@ body {
   border-radius: 100px;
   width: 100%;
   transition: background 0.5s;
-  margin: 8px;
+  margin: 10px;
 }
 
 .signup-card input:focus {

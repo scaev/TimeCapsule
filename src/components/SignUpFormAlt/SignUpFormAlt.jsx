@@ -106,7 +106,13 @@ class SignUpForm extends Component {
               </button>
             </form>
             <div class="signup-card-footer">
-              Already have an account? <a href="#">Login.</a>
+              Already have an account?{" "}
+              <a
+                href="#"
+                onClick={() => this.props.setShowSignUp(!this.props.showSignUp)}
+              >
+                Login.
+              </a>
             </div>
           </div>
           <div class="signup-card-social">
