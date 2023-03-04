@@ -28,8 +28,8 @@ Other users can then see your photos.
 
 ## Wireframing & Concept 📝
 
-![wireframe]()
-![wireframe]()
+![wireframe](https://i.imgur.com/KwudMAm.png)
+![wireframe](https://i.imgur.com/qq58X2X.png)
 
 ## Screenshots 📝
 
