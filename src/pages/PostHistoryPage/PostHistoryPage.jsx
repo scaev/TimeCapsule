@@ -2,7 +2,7 @@ import React from "react";
 import { checkToken } from "../../utilities/users-service";
 // import * as userServices from "../../utilities/users-service";
 
-function OrderHistoryPage() {
+function PostHistoryPage() {
   async function handleCheckToken() {
     //useServices.checkToken()
     try {
@@ -14,10 +14,10 @@ function OrderHistoryPage() {
   }
   return (
     <>
-      <div>OrderHistoryPage</div>
+      <div>PostHistoryPage</div>
       <button onClick={handleCheckToken}>ClickMe</button>
     </>
   );
 }
 
-export default OrderHistoryPage;
+export default PostHistoryPage;

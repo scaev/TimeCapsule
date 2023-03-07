@@ -9,9 +9,9 @@ function NavBar({ user, setUser }) {
 
   return (
     <nav>
-      <Link to="/orders">Order History</Link>
+      <Link to="/posts">Memories</Link>
       &nbsp; | &nbsp;
-      <Link to="/orders/new">New Order</Link>
+      <Link to="/posts/new">Post a memory</Link>
       &nbsp; | &nbsp;<span>Welcome,{user.name}</span>
       {/* &nbsp; | &nbsp;<span>Welcome,{user && user.name}</span> if you want to show navbar before logging in */}
       {/* add the line above and move the navbar location in app.js */}
