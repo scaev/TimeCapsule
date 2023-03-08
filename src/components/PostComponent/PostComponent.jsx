@@ -8,7 +8,8 @@ export default function PostComponent({ posts, user, setPosts }) {
   };
   return (
     <div>
-      <div>user: {user.name}</div>
+      {/* //if there is a problem with timing */}
+      <div>user: {posts.user?.name}</div>
       <div>posted: {new Date(posts.updatedAt).toLocaleDateString()}</div>
       <div>
         text: <strong>{posts.content}</strong>{" "}

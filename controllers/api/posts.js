@@ -3,9 +3,8 @@ const router = express.Router();
 const Post = require("../../models/Post");
 const User = require("../../models/User");
 
-
 async function index(req, res) {
-  const posts = await Post.find({});
+  const posts = await Post.find({}).populate("user").exec();
   res.status(200).json(posts);
 }
 
@@ -51,5 +50,5 @@ module.exports = {
   index,
   create,
   deletePost,
-  show
+  show,
 };
