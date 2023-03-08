@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PostComponent from "../../components/PostComponent/PostComponent.jsx";
 import * as postsAPI from "../../utilities/posts-api";
+import "./NewPostPage.css";
 
 function NewPostPage({ setPosts, posts, user }) {
   const navigate = useNavigate();
@@ -27,16 +28,19 @@ function NewPostPage({ setPosts, posts, user }) {
 
   return (
     <div>
-      <div className="form-container">
+      <div>
         <form onSubmit={handleSubmit}>
           <textarea
+            id="post-text"
             name="content"
             placeholder="What's happening?"
             rows="7"
             value={postData.name}
             onChange={handleChange}
           ></textarea>
-          <button type="submit">add post</button>
+          <button type="submit" id="submit-btn">
+            add post
+          </button>
         </form>
       </div>
       <div>

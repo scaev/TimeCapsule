@@ -11,13 +11,13 @@ function NavBar({ user, setUser }) {
   return (
     <div className="flex-container">
       <Link to="/posts" className="flex-item">
-        <button className="btn fourth">Memories</button>
+        <button className="btn fourth">All Posts</button>
       </Link>
       &nbsp; &nbsp;
       <Link to="/posts/new" className="flex-item">
-        <button className="btn fourth">Add a Memory</button>
+        <button className="btn fourth">Share a Post</button>
       </Link>
-      &nbsp; &nbsp;<span className="username">{user.name}</span>
+      &nbsp; &nbsp;<span className="username">Welcome,{user.name}</span>
       {/* &nbsp; | &nbsp;<span>Welcome,{user && user.name}</span> if you want to show navbar before logging in */}
       {/* add the line above and move the navbar location in app.js */}
       &nbsp; &nbsp;
