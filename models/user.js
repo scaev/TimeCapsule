@@ -17,7 +17,8 @@ const userSchema = new Schema({
     trim: true,
     minLength: 3,
     required: true
-      },
+  },
+  id: {type: String},
 },{
     timestamps: true,
     // when the data coming from server we delete the password
