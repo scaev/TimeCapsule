@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import * as postsAPI from "../../utilities/posts-api";
+import "./PostComponent.css";
 
 export default function PostComponent({ posts, user, setPosts }) {
   const handleClick = async () => {
@@ -7,7 +8,7 @@ export default function PostComponent({ posts, user, setPosts }) {
     setPosts(allPosts);
   };
   return (
-    <div>
+    <div id="post-card">
       {/* //if there is a problem with timing */}
       <div>user: {posts.user?.name}</div>
       <div>posted: {new Date(posts.updatedAt).toLocaleDateString()}</div>
@@ -15,8 +16,7 @@ export default function PostComponent({ posts, user, setPosts }) {
         text: <strong>{posts.content}</strong>{" "}
         <button onClick={handleClick}>x</button>
       </div>
-      <hr />
     </div>
   );
 }
-// .sort({ createdAt })
+

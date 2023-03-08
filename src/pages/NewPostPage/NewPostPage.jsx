@@ -15,7 +15,7 @@ function NewPostPage({ setPosts, posts, user }) {
     e.preventDefault();
     try {
       const newPost = await postsAPI.addPost(postData);
-      setPosts([...posts, newPost]);
+      setPosts([newPost, ...posts]);
       navigate("/posts");
     } catch (err) {
       console.error(err);
