@@ -15,6 +15,7 @@ const postSchema = mongoose.Schema(
       required: true,
     },
     description: String,
+    picturePath: String,
     comments: {
       type: Array,
       default: [],
