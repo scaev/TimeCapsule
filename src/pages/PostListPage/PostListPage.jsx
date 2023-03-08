@@ -8,7 +8,7 @@ export default function PostListPage({ posts, user, setPosts }) {
         <span>no post yet</span>
       ) : (
         <div>
-          {posts.map((post, i) => (
+          {posts.map((posts, i) => (
             <PostComponent
               posts={posts}
               key={i}
@@ -21,11 +21,3 @@ export default function PostListPage({ posts, user, setPosts }) {
     </>
   );
 }
-//   return (
-//     <div className="container">
-//       {props.posts.map((post) => {
-//         return <PostComponent key={post.title} post={post} />;
-//       })}
-//     </div>
-//   );
-// }

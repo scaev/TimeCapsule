@@ -19,3 +19,4 @@ export default function PostComponent({ posts, user, setPosts }) {
     </div>
   );
 }
+// .sort({ createdAt })

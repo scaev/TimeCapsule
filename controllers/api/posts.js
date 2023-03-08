@@ -4,7 +4,7 @@ const Post = require("../../models/Post");
 const User = require("../../models/User");
 
 async function index(req, res) {
-  const posts = await Post.find({}).populate("user").exec();
+  const posts = await Post.find({}).sort({ _id: -1 }).populate("user").exec();
   res.status(200).json(posts);
 }
 
