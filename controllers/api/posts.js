@@ -1,5 +1,7 @@
 const Post = require("../../models/Post");
 import User from "../models/User.js";
+import express from 'express';
+import mongoose from 'mongoose';
 
 module.exports = {
   index,
