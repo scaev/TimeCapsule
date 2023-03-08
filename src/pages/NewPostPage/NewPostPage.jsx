@@ -31,7 +31,7 @@ function NewPostPage({ setPosts, posts, user }) {
         <form onSubmit={handleSubmit}>
           <textarea
             name="content"
-            placeholder="write your description"
+            placeholder="What's happening?"
             rows="7"
             value={postData.name}
             onChange={handleChange}
