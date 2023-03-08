@@ -1,51 +1,61 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import PostComponent from "../../components/PostComponent/PostComponent.jsx";
+import * as postsAPI from "../../utilities/posts-api";
 
-function NewPostPage() {
-  const [description, setDescription] = useState("");
-  const [location, setLocation] = useState("");
+function NewPostPage({ setPosts, posts, user }) {
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const [postData, setPostData] = useState({
+    content: "",
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("/api/posts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ description, location }),
-      });
-      if (!response.ok) {
-        throw new Error("Failed to create post");
-      }
-      alert("Post created successfully!");
-      setDescription("");
-      setLocation("");
+      const newPost = await postsAPI.addPost(postData);
+      setPosts([...posts, newPost]);
+      navigate("/posts");
     } catch (err) {
       console.error(err);
     }
   };
 
+  const handleChange = (evt) => {
+    setPostData({ ...postData, [evt.target.name]: evt.target.value });
+  };
+
   return (
     <div>
-      <h1>New Post</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Description:
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
           <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          Location:
-          <input
-            type="text"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-        </label>
-        <br />
-        <button type="submit">Create Post</button>
-      </form>
+            name="content"
+            placeholder="write your description"
+            rows="7"
+            value={postData.name}
+            onChange={handleChange}
+          ></textarea>
+          <button type="submit">add post</button>
+        </form>
+      </div>
+      <div>
+        <h1>Posts</h1>
+        {posts.length === 0 ? (
+          <span>no post yet</span>
+        ) : (
+          <div>
+            {posts.map((post, i) => (
+              <PostComponent
+                posts={post}
+                key={i}
+                user={user}
+                setPosts={setPosts}
+              />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
