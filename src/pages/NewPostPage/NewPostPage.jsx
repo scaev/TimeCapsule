@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 
 function NewPostPage() {
-  const [title, setTitle] = useState("");
-  const [message, setMessage] = useState("");
-  const [name, setName] = useState("");
-  const [creator, setCreator] = useState("");
+  const [description, setDescription] = useState("");
+  const [location, setLocation] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -12,16 +10,14 @@ function NewPostPage() {
       const response = await fetch("/api/posts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title, message, name, creator }),
+        body: JSON.stringify({ description, location }),
       });
       if (!response.ok) {
         throw new Error("Failed to create post");
       }
       alert("Post created successfully!");
-      setTitle("");
-      setMessage("");
-      setName("");
-      setCreator("");
+      setDescription("");
+      setLocation("");
     } catch (err) {
       console.error(err);
     }
@@ -32,37 +28,19 @@ function NewPostPage() {
       <h1>New Post</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          Title:
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          Message:
+          Description:
           <textarea
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
           />
         </label>
         <br />
         <label>
-          Name:
+          Location:
           <input
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          Creator:
-          <input
-            type="text"
-            value={creator}
-            onChange={(e) => setCreator(e.target.value)}
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
           />
         </label>
         <br />
