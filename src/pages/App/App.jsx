@@ -4,6 +4,8 @@ import NewPostPage from "../NewPostPage/NewPostPage";
 import PostHistoryPage from "../PostHistoryPage/PostHistoryPage";
 import NavBar from "../../components/NavBar/NavBar.jsx";
 import PostListPage from "../../pages/PostListPage/PostListPage.jsx";
+import * as postsAPI from "../../utilities/posts-api";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -13,19 +15,38 @@ import {
 import "./App.css";
 import { getUser } from "../../utilities/users-service";
 // import PostDetails from "./components/PostDetails/PostDetails";
-import { posts } from "../../data.js";
 
 function App() {
   const [user, setUser] = useState(getUser());
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    async function getPosts() {
+      const posts = await postsAPI.getAll();
+      setPosts(posts);
+    }
+    getPosts();
+  }, []);
+
   return (
     <main className="App">
       {user ? (
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/" element={<NewPostPage />} />
-            <Route path="/posts" element={<PostHistoryPage />} />
-            <Route path="/posts/new" element={<NewPostPage />} />
+            {/* Route components in here */}
+            <Route
+              path="/posts/new"
+              element={
+                <NewPostPage setPosts={setPosts} posts={posts} user={user} />
+              }
+            />
+            <Route
+              path="/posts"
+              element={
+                <PostListPage posts={posts} user={user} setPosts={setPosts} />
+              }
+            />
           </Routes>
         </>
       ) : (
