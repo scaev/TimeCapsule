@@ -1,7 +1,9 @@
-import express from "express";
-
+const express = require('express');
 const router = express.Router();
+const postsCtrl = require('../../controllers/api/posts');
 
-router.get("/", getFeedPosts);
+
+router.get("/", postsCtrl.index);
+router.get('/:id', postsCtrl.show);
 
 export default router;
