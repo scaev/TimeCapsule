@@ -7,8 +7,8 @@ router.get("/", index);
 router.get("/:id", show);
 
 async function index(req, res) {
-  const notes = await Note.find({});
-  res.status(200).json(notes);
+  const posts = await Post.find({});
+  res.status(200).json(posts);
 }
 
 async function show(req, res) {
@@ -27,8 +27,8 @@ async function create(req, res) {
   try {
     console.log(req.body);
     req.body.user = req.user._id;
-    const note = await Note.create(req.body);
-    res.status(200).json(note);
+    const post = await Post.create(req.body);
+    res.status(200).json(post);
   } catch (err) {
     res.status(500).json(err);
     console.log(err);
@@ -58,7 +58,23 @@ async function create(req, res) {
 
 // module.exports = router;
 
+async function deletePost(req, res) {
+  try {
+    // console.log(req.params.id);
+    req.body.user = req.user._id;
+    const note = await Note.findByIdAndDelete(req.params.id);
+    // console.log(note)
+    //query all notes from db
+    const notes = await Note.find({});
+    res.status(200).json(notes);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+}
+
 module.exports = {
   index,
   create,
+  deletePost,
 };
