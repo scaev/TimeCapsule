@@ -2,17 +2,19 @@ import mongoose from "mongoose";
 
 const postSchema = mongoose.Schema(
   {
-    title: String,
-    message: String,
-    name: String,
-    creator: String,
-    comments: {
-      type: [String],
-      default: [],
+    userId: {
+      type: String,
+      required: true,
     },
-    createdAt: {
-      type: Date,
-      default: new Date(),
+    name: {
+      type: String,
+      required: true,
+    },
+    location: String,
+    description: String,
+    comments: {
+      type: Array,
+      default: [],
     },
   },
   { timestamps: true }
