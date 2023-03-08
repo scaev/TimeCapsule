@@ -1,22 +1,20 @@
 import { Link } from "react-router-dom";
+import * as postsAPI from "../../utilities/posts-api";
 
-export default function PostComponent(props) {
+export default function PostComponent({ posts, user, setPosts }) {
+  const handleClick = async () => {
+    const allPosts = await postsAPI.deletePost(posts._id);
+    setPosts(allPosts);
+  };
   return (
-    <>
-      <Link to={`/posts/${props.post.title}`} className="post-link">
-        <div
-          style={{
-            background: `url(${props.post.poster_path}) no-repeat center center`,
-            WebkitBackgroundSize: "cover",
-          }}
-          className="item-card"
-        >
-          <div className="title">
-            <h1>{props.post.title}</h1>
-            <h4>Posted: {props.post.post_date}</h4>
-          </div>
-        </div>
-      </Link>
-    </>
+    <div>
+      <div>user: {user.name}</div>
+      <div>posted: {new Date(posts.updatedAt).toLocaleDateString()}</div>
+      <div>
+        text: <strong>{posts.content}</strong>{" "}
+        <button onClick={handleClick}>x</button>
+      </div>
+      <hr />
+    </div>
   );
 }
