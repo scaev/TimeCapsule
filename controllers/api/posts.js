@@ -38,7 +38,7 @@ async function deletePost(req, res) {
     req.body.user = req.user._id;
     const post = await Post.findByIdAndDelete(req.params.id);
     //query all posts from db
-    const posts = await Post.find({});
+    const posts = await Post.find({}).sort({ _id: -1 }).populate("user").exec();
     res.status(200).json(posts);
   } catch (err) {
     console.log(err);

@@ -1,0 +1,9 @@
+#post-card {
+  background: transparent;
+  margin: 5px;
+  text-align: center;
+  border: none;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.308);
+}
