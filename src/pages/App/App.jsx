@@ -3,6 +3,7 @@ import AuthPage from "../AuthPage/AuthPage";
 import NewPostPage from "../NewPostPage/NewPostPage";
 import PostHistoryPage from "../PostHistoryPage/PostHistoryPage";
 import NavBar from "../../components/NavBar/NavBar.jsx";
+import PostListPage from "../../components/PostListPage/PostListPage.jsx";
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,7 +12,8 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import { getUser } from "../../utilities/users-service";
-import PostDetails from './components/PostDetails/PostDetails';
+// import PostDetails from "./components/PostDetails/PostDetails";
+import { posts } from "../../data.js";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -19,16 +21,14 @@ function App() {
     <main className="App">
       {user ? (
         <Router>
-        <Container maxWidth='xl'>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/" element={ <Navigate to="/posts" />} />
+            <Route path="/" element={<PostListPage posts={posts} />} />
             <Route path="/posts" element={<PostHistoryPage />} />
-              <Route path="/posts/new" element={<NewPostPage />} />
-              <Route path="/posts/:id" element={<PostDetails />} />
+            <Route path="/posts/new" element={<NewPostPage />} />
+            {/* <Route path="/posts/:id" element={<PostDetails />} /> */}
           </Routes>
-          </Container>
-          </Router>
+        </Router>
       ) : (
         <AuthPage setUser={setUser} />
       )}

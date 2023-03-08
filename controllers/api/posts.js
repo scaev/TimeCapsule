@@ -11,9 +11,7 @@ module.exports = {
 
 async function index(req, res) {
   //ask to david
-  const posts = await Post.find({}).sort("name").populate("category").exec();
-  // re-sort based upon the sortOrder of the categories
-  posts.sort((a, b) => a.category.sortOrder - b.category.sortOrder);
+  const posts = await Post.find({}).sort("name").exec();
   res.json(posts);
 }
 
