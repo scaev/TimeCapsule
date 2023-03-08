@@ -1,41 +1,52 @@
+const express = require("express");
+const router = express.Router();
 const Post = require("../../models/Post");
-import User from "../models/User.js";
-import express from 'express';
-import mongoose from 'mongoose';
+const User = require("../../models/User");
 
-module.exports = {
-  index,
-  show,
-  createPost,
-};
+router.get("/", index);
+router.get("/:id", show);
+router.post("/", createPost);
 
 async function index(req, res) {
-  //ask to david
-  const posts = await Post.find({}).sort("name").exec();
-  res.json(posts);
+  try {
+    const posts = await Post.find().sort("-createdAt");
+    res.status(200).json(posts);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 }
 
 async function show(req, res) {
-  const post = await Post.findById(req.params.id);
-  res.json(post);
+  try {
+    const post = await Post.findById(req.params.id);
+    if (post == null) {
+      return res.status(404).json({ message: "Post not found" });
+    }
+    res.status(200).json(post);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 }
 
 async function createPost(req, res) {
   try {
-    const { userId, description, picturePath } = req.body;
-    const user = await User.findById(userId);
-    const newPost = new Post({
-      userId,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      description,
-      picturePath,
+    const { title, message, name } = req.body;
+    const user = await User.findOne({ name });
+    if (user == null) {
+      return res.status(400).json({ message: "User not found" });
+    }
+    const post = new Post({
+      title,
+      message,
+      name,
+      creator: user._id,
       comments: [],
     });
-    await newPost.save();
-    const post = await Post.find();
+    await post.save();
     res.status(201).json(post);
   } catch (err) {
-    res.status(409).json({ message: err.message });
+    res.status(500).json({ message: err.message });
   }
 }
+
+module.exports = router;
