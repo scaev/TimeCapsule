@@ -6,8 +6,9 @@ import "./NewPostPage.css";
 import axios from "axios";
 import { Card, Alert, Form, Button, Container } from "react-bootstrap";
 
+
 ///changed this part  for image setimage
-function NewPostPage({ setPosts, posts, user }) {
+export default function NewPostPage({ setPosts, posts, user }) {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [image, setImage] = useState();
@@ -91,7 +92,6 @@ function NewPostPage({ setPosts, posts, user }) {
           </div>
         )}
       </div>
-      {/* //image upload_preset */}
       <Container
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh" }}
@@ -124,5 +124,3 @@ function NewPostPage({ setPosts, posts, user }) {
     </div>
   );
 }
-
-export default NewPostPage;
