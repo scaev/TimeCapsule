@@ -11,6 +11,7 @@ export default function PostComponent({ posts, user, setPosts }) {
     <div id="post-card">
       {/* //if there is a problem with timing */}
       <div>user: {posts.user?.name}</div>
+      <div>{}</div>
       <div>posted: {new Date(posts.updatedAt).toLocaleDateString()}</div>
       <div>
         text: <strong>{posts.content}</strong>{" "}
@@ -19,4 +20,3 @@ export default function PostComponent({ posts, user, setPosts }) {
     </div>
   );
 }
-

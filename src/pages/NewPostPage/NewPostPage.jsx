@@ -6,7 +6,13 @@ import "./NewPostPage.css";
 import axios from "axios";
 import { Card, Alert, Form, Button, Container } from "react-bootstrap";
 
-function NewPostPage({ setPosts, posts, user, image, setImage }) {
+export default function NewPostPage({
+  setPosts,
+  posts,
+  user,
+  image,
+  setImage,
+}) {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [postData, setPostData] = useState({
@@ -85,8 +91,8 @@ function NewPostPage({ setPosts, posts, user, image, setImage }) {
           </div>
         )}
       </div>
-      {/* //image upload_preset */}
-      {/* <Container
+      //image upload_preset
+      <Container
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh" }}
       >
@@ -98,8 +104,9 @@ function NewPostPage({ setPosts, posts, user, image, setImage }) {
                 {error && <Alert variant="danger">{error}</Alert>}
                 <Form onSubmit={handleSubmit2}>
                   <Form.Group>
-                    <Form.File
+                    <Form.Control
                       className="position-relative mt-2"
+                      type="file"
                       name="file"
                       accept="image/*"
                       onChange={(e) => setImage(e.target.files[0])}
@@ -112,9 +119,7 @@ function NewPostPage({ setPosts, posts, user, image, setImage }) {
             </Card>
           </>
         </div>
-      </Container> */}
+      </Container>
     </div>
   );
 }
-
-export default NewPostPage;
