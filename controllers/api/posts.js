@@ -46,9 +46,32 @@ async function deletePost(req, res) {
   }
 }
 
+async function update(req, res) {
+  try {
+    const postId = req.params.id;
+    const post = await Post.findById(postId);
+    if (!post) {
+      return res.status(404).json({ message: "Post not found" });
+    }
+    if (post.user.toString() !== req.user._id.toString()) {
+      return res
+        .status(401)
+        .json({ message: "Not authorized to update this post" });
+    }
+    const { content } = req.body;
+    post.content = content || post.content;
+    const updatedPost = await post.save();
+    res.status(200).json(updatedPost);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Internal server error" });
+  }
+}
+
 module.exports = {
   index,
   create,
   deletePost,
   show,
+  update,
 };
