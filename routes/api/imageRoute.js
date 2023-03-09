@@ -6,3 +6,4 @@ const imagesCtrl = require("../../controllers/api/images");
 router.post("/store-image", imagesCtrl.createImage);
 
 module.exports = router;
+w
