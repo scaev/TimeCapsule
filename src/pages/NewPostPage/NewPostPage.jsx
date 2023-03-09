@@ -37,8 +37,12 @@ export default function NewPostPage({
       if (image) {
         const formData = new FormData();
         formData.append("file", image);
-        formData.append("upload_preset", "presetName");
-        const dataRes = await axios.post("yourUrl", formData);
+        formData.append("upload_preset", "timecapsuleimage");
+        formData.append("cloud_name", "dppmeiqqi");
+        const dataRes = await axios.post(
+          "https://api.cloudinary.com/v1_1/dppmeiqqi",
+          formData
+        );
         imageUrl = dataRes.data.url;
       }
 
@@ -114,6 +118,9 @@ export default function NewPostPage({
                       feedbackTooltip
                     />
                   </Form.Group>
+                  <Button className="w-100 mt-2" type="submit">
+                    Submit
+                  </Button>
                 </Form>
               </Card.Body>
             </Card>
