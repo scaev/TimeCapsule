@@ -35,7 +35,11 @@ export default function NewPostPage({ setPosts, posts, user }) {
         const formData = new FormData();
         formData.append("file", image);
         formData.append("upload_preset", "timecapsulepics");
-        const dataRes = await axios.post("/cloudinary", formData);
+        const dataRes = await axios.post("/cloudinary", formData, {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "multipart/from-data",
+        });
+
         imageUrl = dataRes.data.url;
       }
 
