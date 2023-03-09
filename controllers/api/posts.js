@@ -25,7 +25,9 @@ async function create(req, res) {
     console.log(req.body);
     req.body.user = req.user._id;
     const post = await Post.create(req.body);
-    res.status(200).json(post);
+    const populatedPost = await Post.populate(post, { path: "user" });
+    console.log(populatedPost);
+    res.status(200).json(populatedPost);
   } catch (err) {
     res.status(500).json(err);
     console.log(err);
@@ -49,18 +51,20 @@ async function deletePost(req, res) {
 async function update(req, res) {
   try {
     const postId = req.params.id;
-    const post = await Post.findById(postId);
-    if (!post) {
+    const posts = await Post.findById(postId).populate("user").exec();
+    if (!posts) {
       return res.status(404).json({ message: "Post not found" });
     }
-    if (post.user.toString() !== req.user._id.toString()) {
+    if (posts.user._id.toString() !== req.user._id.toString()) {
       return res
         .status(401)
         .json({ message: "Not authorized to update this post" });
     }
     const { content } = req.body;
-    post.content = content || post.content;
-    const updatedPost = await post.save();
+    posts.content = content || posts.content;
+    const updatedPost = await posts.save();
+    console.log(updatedPost);
+
     res.status(200).json(updatedPost);
   } catch (err) {
     console.error(err);

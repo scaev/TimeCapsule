@@ -6,7 +6,6 @@ import "./NewPostPage.css";
 import axios from "axios";
 import { Card, Alert, Form, Button, Container } from "react-bootstrap";
 
-
 ///changed this part  for image setimage
 export default function NewPostPage({ setPosts, posts, user }) {
   const navigate = useNavigate();
@@ -46,7 +45,7 @@ export default function NewPostPage({ setPosts, posts, user }) {
       const submitPost = {
         image: imageUrl,
       };
-      await axios.post("http://localhost:3001/store-image", submitPost);
+      await axios.post("/api/save-image", submitPost);
     } catch (err) {
       err.response.data.msg && setError(err.response.data.msg);
     }
@@ -92,7 +91,7 @@ export default function NewPostPage({ setPosts, posts, user }) {
           </div>
         )}
       </div>
-      <Container
+      {/* <Container
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh" }}
       >
@@ -120,7 +119,7 @@ export default function NewPostPage({ setPosts, posts, user }) {
             </Card>
           </>
         </div>
-      </Container>
+      </Container> */}
     </div>
   );
 }

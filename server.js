@@ -6,11 +6,11 @@ require("dotenv").config();
 require("./config/database");
 
 const app = express();
-const proxyMiddleware = require("./proxy.js");
+
 
 app.use(logger("dev"));
 app.use(express.json());
-app.use("/cloudinary", proxyMiddleware);
+
 
 // Configure both serve-favicon & static middleware
 // to serve from the production 'build' folder
