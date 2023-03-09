@@ -19,6 +19,7 @@ import { getUser } from "../../utilities/users-service";
 function App() {
   const [user, setUser] = useState(getUser());
   const [posts, setPosts] = useState([]);
+  const [image, setImage] = useState();
 
   useEffect(() => {
     async function getPosts() {
@@ -38,7 +39,13 @@ function App() {
             <Route
               path="/posts/new"
               element={
-                <NewPostPage setPosts={setPosts} posts={posts} user={user} />
+                <NewPostPage
+                  setPosts={setPosts}
+                  posts={posts}
+                  user={user}
+                  image={image}
+                  setImage={setImage}
+                />
               }
             />
             <Route
