@@ -10,12 +10,17 @@ export default function PostComponent({ posts, user, setPosts }) {
   return (
     <div id="post-card">
       {/* //if there is a problem with timing */}
-      <div>user: {posts.user?.name}</div>
-      <div>{}</div>
-      <div>posted: {new Date(posts.updatedAt).toLocaleDateString()}</div>
-      <div>
-        text: <strong>{posts.content}</strong>{" "}
-        <button onClick={handleClick}>x</button>
+      <div id="text-btn">
+        <div className="name-date">{posts.user?.name}</div>
+        <button id="delete-btn" onClick={handleClick}>
+          X
+        </button>
+      </div>
+      <div className="name-date">
+        {new Date(posts.updatedAt).toLocaleDateString()}
+      </div>
+      <div id="text-btn">
+        <strong>{posts.content}</strong>{" "}
       </div>
     </div>
   );

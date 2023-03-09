@@ -6,15 +6,12 @@ import "./NewPostPage.css";
 import axios from "axios";
 import { Card, Alert, Form, Button, Container } from "react-bootstrap";
 
-export default function NewPostPage({
-  setPosts,
-  posts,
-  user,
-  image,
-  setImage,
-}) {
+
+///changed this part  for image setimage
+export default function NewPostPage({ setPosts, posts, user }) {
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  const [image, setImage] = useState();
   const [postData, setPostData] = useState({
     content: "",
   });
@@ -37,8 +34,8 @@ export default function NewPostPage({
       if (image) {
         const formData = new FormData();
         formData.append("file", image);
-        formData.append("upload_preset", "presetName");
-        const dataRes = await axios.post("yourUrl", formData);
+        formData.append("upload_preset", "timecapsulepics");
+        const dataRes = await axios.post("/cloudinary", formData);
         imageUrl = dataRes.data.url;
       }
 
@@ -91,7 +88,6 @@ export default function NewPostPage({
           </div>
         )}
       </div>
-      //image upload_preset
       <Container
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh" }}
@@ -114,6 +110,7 @@ export default function NewPostPage({
                       feedbackTooltip
                     />
                   </Form.Group>
+                  <Button type="submit">Submit</Button>
                 </Form>
               </Card.Body>
             </Card>

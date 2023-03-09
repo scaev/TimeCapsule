@@ -18,4 +18,6 @@ async function createImage(req, res) {
   }
 }
 
-module.export = createImage;
+module.exports = {
+  createImage,
+};
