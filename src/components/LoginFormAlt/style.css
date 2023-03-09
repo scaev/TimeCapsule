@@ -6,6 +6,7 @@ body {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
   background: linear-gradient(to right, #333399, #ff00cc);
+  background: #3785fc;
   display: flex;
   justify-content: center;
   align-items: center;

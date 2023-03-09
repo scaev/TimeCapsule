@@ -11,7 +11,7 @@
 }
 
 #submit-btn {
-  background: linear-gradient(to right, #ff00cc, #333399);
+  /* background: linear-gradient(to right, #ff00cc, #333399); */
   color: white;
   padding: 1rem;
   border-radius: 100px;

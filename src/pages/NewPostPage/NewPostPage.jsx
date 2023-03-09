@@ -6,9 +6,11 @@ import "./NewPostPage.css";
 import axios from "axios";
 import { Card, Alert, Form, Button, Container } from "react-bootstrap";
 
-function NewPostPage({ setPosts, posts, user, image, setImage }) {
+///changed this part  for image setimage
+function NewPostPage({ setPosts, posts, user }) {
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  const [image, setImage] = useState();
   const [postData, setPostData] = useState({
     content: "",
   });
@@ -31,8 +33,8 @@ function NewPostPage({ setPosts, posts, user, image, setImage }) {
       if (image) {
         const formData = new FormData();
         formData.append("file", image);
-        formData.append("upload_preset", "presetName");
-        const dataRes = await axios.post("yourUrl", formData);
+        formData.append("upload_preset", "timecapsulepics");
+        const dataRes = await axios.post("/cloudinary", formData);
         imageUrl = dataRes.data.url;
       }
 
@@ -86,7 +88,7 @@ function NewPostPage({ setPosts, posts, user, image, setImage }) {
         )}
       </div>
       {/* //image upload_preset */}
-      {/* <Container
+      <Container
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh" }}
       >
@@ -98,8 +100,9 @@ function NewPostPage({ setPosts, posts, user, image, setImage }) {
                 {error && <Alert variant="danger">{error}</Alert>}
                 <Form onSubmit={handleSubmit2}>
                   <Form.Group>
-                    <Form.File
+                    <Form.Control
                       className="position-relative mt-2"
+                      type="file"
                       name="file"
                       accept="image/*"
                       onChange={(e) => setImage(e.target.files[0])}
@@ -107,12 +110,13 @@ function NewPostPage({ setPosts, posts, user, image, setImage }) {
                       feedbackTooltip
                     />
                   </Form.Group>
+                  <Button type="submit">Submit</Button>
                 </Form>
               </Card.Body>
             </Card>
           </>
         </div>
-      </Container> */}
+      </Container>
     </div>
   );
 }
