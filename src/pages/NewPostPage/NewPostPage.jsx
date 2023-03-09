@@ -86,7 +86,7 @@ function NewPostPage({ setPosts, posts, user, image, setImage }) {
         )}
       </div>
       {/* //image upload_preset */}
-      <Container
+      {/* <Container
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh" }}
       >
@@ -112,7 +112,7 @@ function NewPostPage({ setPosts, posts, user, image, setImage }) {
             </Card>
           </>
         </div>
-      </Container>
+      </Container> */}
     </div>
   );
 }
