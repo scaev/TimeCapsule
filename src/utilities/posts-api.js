@@ -12,3 +12,7 @@ export function getAll() {
 export function deletePost(_id) {
   return sendRequest(`${BASE_URL}/${_id}`, "DELETE");
 }
+
+export function updatePost(postId, updatedPostData) {
+  return sendRequest(`${BASE_URL}/${postId}`, "PUT", updatedPostData);
+}

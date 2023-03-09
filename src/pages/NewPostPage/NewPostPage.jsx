@@ -79,9 +79,9 @@ export default function NewPostPage({ setPosts, posts, user }) {
           <span>no post yet</span>
         ) : (
           <div>
-            {posts.map((post, i) => (
+            {posts.map((posts, i) => (
               <PostComponent
-                posts={post}
+                posts={posts}
                 key={i}
                 user={user}
                 setPosts={setPosts}
