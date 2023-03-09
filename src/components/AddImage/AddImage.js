@@ -6,7 +6,7 @@ async function handleSubmit(e) {
       const formData = new FormData();
       formData.append("file", image);
       formData.append("upload_preset", "presetName");
-      const dataRes = await axios.post("yourUrl", formData);
+      const dataRes = await axios.post("timecapsuleimage", formData);
       imageUrl = dataRes.data.url;
     }
 
