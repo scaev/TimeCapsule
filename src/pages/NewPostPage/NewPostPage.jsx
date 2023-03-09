@@ -85,7 +85,7 @@ function NewPostPage({ setPosts, posts, user, image, setImage }) {
           </div>
         )}
       </div>
-      //image upload_preset
+      {/* //image upload_preset */}
       <Container
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh" }}
