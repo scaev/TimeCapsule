@@ -5,8 +5,8 @@
 body {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
-  background: linear-gradient(to right, #333399, #ff00cc);
-  background: #3785fc;
+  background: radial-gradient( #dcdcfe, #ffe2f9);
+  /* background: #94bfff; */
   display: flex;
   justify-content: center;
   align-items: center;
