@@ -4,7 +4,6 @@ import PostComponent from "../../components/PostComponent/PostComponent.jsx";
 import * as postsAPI from "../../utilities/posts-api";
 import "./NewPostPage.css";
 import axios from "axios";
-import { Card, Alert, Form, Button, Container } from "react-bootstrap";
 
 ///changed this part  for image setimage
 export default function NewPostPage({ setPosts, posts, user }) {

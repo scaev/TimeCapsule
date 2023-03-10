@@ -1,6 +1,6 @@
 #post-card {
   background: transparent;
-  margin: 5px;
+  margin: 15px;
   text-align: center;
   border: none;
   padding: 20px 30px;
@@ -17,6 +17,11 @@
 
 .name-date {
   text-align: left;
+  opacity: 0.6;
+}
+
+.name{
+  font-weight: bold;
 }
 
 #delete-btn {

@@ -33,7 +33,7 @@ export default function PostComponent({ posts, user, setPosts }) {
   return (
     <div id="post-card">
       <div id="text-btn">
-        <div className="name-date">{posts.user?.name}</div>
+        <div className="name" >{posts.user?.name}</div>
         <button id="delete-btn" onClick={handleDelete}>
           X
         </button>
@@ -54,7 +54,7 @@ export default function PostComponent({ posts, user, setPosts }) {
         </form>
       ) : (
         <div id="text-btn">
-          <strong>{posts.title}</strong> - {posts.content}{" "}
+          <strong>{posts.title}</strong>{posts.content}{" "}
           <button onClick={toggleEditForm}>Edit</button>
         </div>
       )}
