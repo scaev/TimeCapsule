@@ -33,10 +33,10 @@ Other users can then see your photos.
 
 ## Screenshots 📝
 
-![SS]()
-![SS]()
-![SS]()
-![SS]()
+![SS](https://i.imgur.com/kGt2UwV.png)
+![SS](https://i.imgur.com/hag84cl.png)
+![SS](https://i.imgur.com/gNcJaDk.png)
+
 
 Prior to project start, wireframing was completed to show ideal project design and flow. The above screenshot details a basic design concept prior to beginning the project.
 
