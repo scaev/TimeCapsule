@@ -52,7 +52,7 @@ Project planning materials are held in [this](https://trello.com/b/64CyLMsH/time
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
 
-##Deployment 🚀
+## Deployment 🚀
 The application is currently deployed on Heroku at [timecapsule](https://git.heroku.com/timecapsule.git)
 
 ## Contributing 🙏
