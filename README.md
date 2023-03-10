@@ -2,7 +2,7 @@
 
 ### Welcome to TimeCapsule! ⌛
 
-This is a web application that allows users to share photos and gain feedback on their photos.
+This is a web application that allows users to share posts and gain feedback on their posts.
 
 ## Features
 
@@ -21,9 +21,9 @@ This is a web application that allows users to share photos and gain feedback on
 
 To use the application, you'll need to create an account. You can do this by clicking the "Sign Up" link on the home page and filling out the registration form.
 
-Once you're logged in, you can post a new photo by clicking the "Share" link on the home page. You'll need to provide a photo, a title, description.
+Once you're logged in, you can post by clicking the "Share" link on the home page. You'll need to provide a title and description.
 
-Other users can then see your photos.
+Other users can then see your posts.
 
 ## Wireframing & Concept 📝
 
@@ -57,8 +57,11 @@ Project planning materials are held in [this](https://trello.com/b/64CyLMsH/time
 If you'd like to contribute to this project, please fork the repository and create a new branch for your changes. Once you've made your changes, submit a pull request to merge your branch back into the main repository.
 
 ## Icebox Features 🧊
-
--
+- Photo feature
+- User Profiles
+- Chat
+- Likes
+- Views
 
 ## Acknowledgments
 
