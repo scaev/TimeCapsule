@@ -21,7 +21,7 @@ This is a web application that allows users to share posts and gain feedback on 
 
 To use the application, you'll need to create an account. You can do this by clicking the "Sign Up" link on the home page and filling out the registration form.
 
-Once you're logged in, you can post by clicking the "Share" link on the home page. You'll need to provide a title and description.
+Once you're logged in, you can post by clicking the "New Post" link on the home page. You'll need to provide a title and description and submit with "Post".
 
 Other users can then see your posts.
 
@@ -37,7 +37,7 @@ Other users can then see your posts.
 
 Prior to project start, wireframing was completed to show ideal project design and flow. The above screenshot details a basic design concept prior to beginning the project.
 
-![ERD]()
+![ERD](https://lucid.app/lucidchart/78cac88f-dcdd-4f8e-819f-a2c121f5e223/edit?invitationId=inv_33783d42-0642-4415-b280-f016cc71267e)
 
 Project planning materials are held in [this](https://trello.com/b/64CyLMsH/time-capsule) public Trello board.
 
