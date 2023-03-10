@@ -8,13 +8,12 @@ This is a web application that allows users to share photos and gain feedback on
 
 - Implemented JWT User Authentication
 - React Hooks and Material UI to ensure application uses up-to-date frameworks
-- AWS S3
 
 ## Meet the Developers! 🤝
 
-### 🧑‍💻 David Benner
+### 🧑‍💻 [David Benner](https://github.com/davebenner14)
 
-### 🧑‍💻 Kaan Karadag
+### 🧑‍💻 [Kaan Karadag](https://github.com/scaev)
 
 ## Installation
 
