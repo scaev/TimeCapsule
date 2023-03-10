@@ -52,7 +52,7 @@ Project planning materials are held in [this](https://trello.com/b/64CyLMsH/time
 ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
 
 ## Deployment 🚀
-The application is currently deployed on Heroku at [timecapsule](https://git.heroku.com/timecapsule.git)
+The application is currently deployed on Heroku at [timecapsule](https://timecapsule.herokuapp.com/)
 
 ## Contributing 🙏
 
