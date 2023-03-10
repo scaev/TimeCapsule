@@ -37,7 +37,7 @@ Other users can then see your posts.
 
 Prior to project start, wireframing was completed to show ideal project design and flow. The above screenshot details a basic design concept prior to beginning the project.
 
-![ERD](https://lucid.app/lucidchart/78cac88f-dcdd-4f8e-819f-a2c121f5e223/edit?invitationId=inv_33783d42-0642-4415-b280-f016cc71267e)
+![ERD](https://i.imgur.com/L7yoo3o.png)
 
 Project planning materials are held in [this](https://trello.com/b/64CyLMsH/time-capsule) public Trello board.
 
@@ -45,7 +45,6 @@ Project planning materials are held in [this](https://trello.com/b/64CyLMsH/time
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
@@ -68,4 +67,4 @@ If you'd like to contribute to this project, please fork the repository and crea
 
 ## Acknowledgments
 
-This project was created as a learning exercise based on the MERN-stack lesson within a period of 7 days.
+This project was created as a learning exercise based on the MERN-stack lesson within a period of 3 days.
