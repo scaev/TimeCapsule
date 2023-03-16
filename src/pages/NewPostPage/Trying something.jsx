@@ -19,9 +19,19 @@ export default function NewPostPage({ setPosts, posts, user }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // if (image) {
+      //   const formData = new FormData();
+      //   formData.append("image", image);
+
+      //   const uploadResult = await postsAPI.addPost(formData);
+      //   setPostData({ ...postData, image: uploadResult.secure_url });
+      // }
+
       const newPost = await postsAPI.addPost(postData);
       setPosts([newPost, ...posts]);
-      navigate("/posts");
+      setPostData({ ...postData, image: postData.image });
+      console.log(postData.image);
+      navigate("/posts/new");
     } catch (err) {
       console.error(err);
     }
@@ -46,8 +56,10 @@ export default function NewPostPage({ setPosts, posts, user }) {
           <button type="submit" id="submit-btn">
             add post
           </button>
-          <CloudinaryUploadWidget />
-          {/* <img src="" alt="pic" id="uploadedimage" /> */}
+          <CloudinaryUploadWidget setImage={setImage} />
+          {postData.image && (
+            <img src={postData.image} alt="Uploaded" id="uploadedimage" />
+          )}
         </form>
       </div>
       <div>
@@ -63,7 +75,7 @@ export default function NewPostPage({ setPosts, posts, user }) {
                 user={user}
                 setPosts={setPosts}
                 image={image}
-                setImage={setImage}
+                // setImage={setImage}
               />
             ))}
           </div>
@@ -73,7 +85,7 @@ export default function NewPostPage({ setPosts, posts, user }) {
   );
 }
 
-function CloudinaryUploadWidget({ setPostData, postData }) {
+function CloudinaryUploadWidget({ setImage }) {
   // Create and configure your Cloudinary instance.
   const cld = new Cloudinary({
     cloud: {
@@ -91,26 +103,30 @@ function CloudinaryUploadWidget({ setPostData, postData }) {
       {
         cloudName,
         uploadPreset,
+        resourceType: "image",
+        maxFileSize: 15000000,
+        multiple: false,
+        cropping: false,
+        croppingAspectRatio: 1,
+        maxImageWidth: 800,
+        maxImageHeight: 800,
+        onSuccess: ({ secure_url }) => {
+          setImage(secure_url);
+        },
       },
       (error, result) => {
         if (!error && result && result.event === "success") {
-          console.log("Uploaded! Here is the details : ", result.info);
-          // document
-          //   .getElementById("uploadedimage")
-          //   .setAttribute("src", result.info.secure_url);
-          // setPostData((prevPostData) => ({
-          setPostData({ ...postData, image: result.info.secure_url });
+          console.log("Done! Here is the image info: ", result.info);
+          // setImage(result.info.secure_url);
         }
       }
     );
-    document.getElementById("upload_widget").addEventListener(
-      "click",
-      function () {
+    document
+      .getElementById("upload_widget")
+      .addEventListener("click", function () {
         myWidget.open();
-      },
-      false
-    );
-  }, []);
+      });
+  }, [setImage]);
 
   return (
     <>
