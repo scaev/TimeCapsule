@@ -1,6 +1,6 @@
 import React from "react";
 import SignUpForm from "../../components/SignUpFormAlt/SignUpFormAlt";
-import LoginForm from "../../components/LoginFormAlt/LoginFormAlt";
+import LoginFormAlt from "../../components/LoginFormAlt/LoginFormAlt";
 import { useState } from "react";
 
 function AuthPage({ setUser }) {
@@ -15,7 +15,7 @@ function AuthPage({ setUser }) {
           setShowSignUp={setShowSignUp}
         />
       ) : (
-        <LoginForm
+        <LoginFormAlt
           setUser={setUser}
           showSignUp={showSignUp}
           setShowSignUp={setShowSignUp}

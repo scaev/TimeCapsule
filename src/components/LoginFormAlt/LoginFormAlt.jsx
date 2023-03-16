@@ -3,7 +3,7 @@ import * as usersService from "../../utilities/users-service";
 import "./style.css";
 import { Link } from "react-router-dom";
 
-export default function LoginForm({ setUser, showSignUp, setShowSignUp }) {
+export default function LoginFormAlt({ setUser, showSignUp, setShowSignUp }) {
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
