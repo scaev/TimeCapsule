@@ -8,6 +8,7 @@ This is a web application that allows users to share posts and gain feedback on 
 
 - Implemented JWT User Authentication
 - React Hooks and Material UI to ensure application uses up-to-date frameworks
+- Uploading files on Front-End via Cloudinary
 
 ## Meet the Developers! 🤝
 
@@ -16,6 +17,7 @@ This is a web application that allows users to share posts and gain feedback on 
 ### 🧑‍💻 [Kaan Karadag](https://github.com/scaev)
 
 ## Installation
+npm start & nodemon server
 
 ## Usage
 
@@ -25,23 +27,14 @@ Once you're logged in, you can post by clicking the "New Post" link on the home 
 
 Other users can then see your posts.
 
-## Wireframing & Concept 📝
-
-![wireframe](https://i.imgur.com/PGtNKSw.png)
 
 ## Screenshots 📝
 
-![SS](https://i.imgur.com/kGt2UwV.png)
-![SS](https://i.imgur.com/hag84cl.png)
-![SS](https://i.imgur.com/gNcJaDk.png)
-
-Prior to project start, wireframing was completed to show ideal project design and flow. The above screenshot details a basic design concept prior to beginning the project.
-
-![ERD](https://i.imgur.com/L7yoo3o.png)
+![SS](https://i.imgur.com/NQUuuJI.png)
+![SS](https://i.imgur.com/LDHdy3P.png)
+![SS](https://i.imgur.com/sK6Vi6U.png)
 
 Project planning materials are held in [this](https://trello.com/b/64CyLMsH/time-capsule) public Trello board.
-
-## Technologies Used 💻
 
 ## Technologies Used 💻
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
