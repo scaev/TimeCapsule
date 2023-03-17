@@ -5,11 +5,12 @@
 body {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
-  background: radial-gradient( #dcdcfe, #ffe2f9);
-  /* background: #94bfff; */
+  /* background: radial-gradient( #dcdcfe, #ffe2f9); */
+  background: #afcaf3;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
 }
 
 /* Login Card */

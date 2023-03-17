@@ -45,7 +45,11 @@ export default function PostComponent({ posts, user, setPosts }) {
         <form onSubmit={handleEdit}>
           <label>
             Content:
-            <textarea value={content} onChange={handleContentChange} />
+            <textarea
+              id="post-text"
+              value={content}
+              onChange={handleContentChange}
+            />
           </label>
           <button type="submit">Update</button>
           <button type="button" onClick={toggleEditForm}>
