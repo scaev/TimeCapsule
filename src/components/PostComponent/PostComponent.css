@@ -34,8 +34,9 @@
 
 #delete-btn {
   cursor: pointer;
-  border: none;
+  border: solid white 0.8px;
 }
+
 
 #post-image-id {
   /* width: ; */
