@@ -54,7 +54,8 @@ export default function PostComponent({ posts, user, setPosts }) {
         </form>
       ) : (
         <div id="text-btn">
-          <strong>{posts.title}</strong>{posts.content}{" "}
+            <strong>{posts.title}</strong>{posts.content}{" "}
+            <img src={posts.image} alt="image" />
           <button onClick={toggleEditForm}>Edit</button>
         </div>
       )}

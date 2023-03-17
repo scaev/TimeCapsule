@@ -21,7 +21,7 @@ export default function NewPostPage({ setPosts, posts, user }) {
     try {
       const newPost = await postsAPI.addPost(postData);
       setPosts([newPost, ...posts]);
-      navigate("/posts");
+      navigate("/posts/new");
     } catch (err) {
       console.error(err);
     }
@@ -46,8 +46,10 @@ export default function NewPostPage({ setPosts, posts, user }) {
           <button type="submit" id="submit-btn">
             add post
           </button>
-          <CloudinaryUploadWidget />
-          {/* <img src="" alt="pic" id="uploadedimage" /> */}
+          <CloudinaryUploadWidget
+            setPostData={setPostData}
+            postData={postData}
+          />
         </form>
       </div>
       <div>
@@ -81,7 +83,7 @@ function CloudinaryUploadWidget({ setPostData, postData }) {
     },
   });
   const myImage = cld.image("front_face");
-  // myImage.resize(fill().width(250).height(250));
+  myImage.resize(fill().width(250).height(250));
 
   useEffect(() => {
     const cloudName = "dal04xwlw";
@@ -95,10 +97,6 @@ function CloudinaryUploadWidget({ setPostData, postData }) {
       (error, result) => {
         if (!error && result && result.event === "success") {
           console.log("Uploaded! Here is the details : ", result.info);
-          // document
-          //   .getElementById("uploadedimage")
-          //   .setAttribute("src", result.info.secure_url);
-          // setPostData((prevPostData) => ({
           setPostData({ ...postData, image: result.info.secure_url });
         }
       }
