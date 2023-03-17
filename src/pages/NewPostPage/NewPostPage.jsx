@@ -113,9 +113,9 @@ function CloudinaryUploadWidget({ setPostData, postData }) {
   return (
     <>
       <button id="upload_widget" className="cloudinary-button">
-        Upload
+        Choose File
       </button>
-      <AdvancedImage cldImg={myImage} />
+      {/* <AdvancedImage cldImg={myImage} /> */}
     </>
   );
 }

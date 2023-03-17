@@ -32,8 +32,8 @@ export default function PostComponent({ posts, user, setPosts }) {
 
   return (
     <div id="post-card">
-      <div id="text-btn">
-        <div className="name" >{posts.user?.name}</div>
+      <div id="name-btn">
+        <div className="name">{posts.user?.name}</div>
         <button id="delete-btn" onClick={handleDelete}>
           X
         </button>
@@ -54,11 +54,17 @@ export default function PostComponent({ posts, user, setPosts }) {
         </form>
       ) : (
         <div id="text-btn">
-            <strong>{posts.title}</strong>{posts.content}{" "}
-            <img src={posts.image} alt="image" />
-          <button onClick={toggleEditForm}>Edit</button>
+          <strong>{posts.title}</strong>
+          {posts.content} <button onClick={toggleEditForm}>Edit</button>
         </div>
       )}
+      <img
+        // className="post-image"
+        className={posts.image === "" ? "noimage" : "post-image"}
+        src={posts.image}
+        alt="image"
+        id="post-image-id"
+      />
     </div>
   );
 }
