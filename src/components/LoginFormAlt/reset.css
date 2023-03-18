@@ -19,10 +19,10 @@
 }
 
 /* Reapply the pointer cursor for anchor tags */
-a,
+/* a,
 button {
   cursor: revert;
-}
+} */
 
 /* Remove list styles (bullets/numbers) */
 ol,

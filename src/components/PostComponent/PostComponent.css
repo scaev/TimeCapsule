@@ -13,6 +13,14 @@
   justify-content: space-between;
   display: flex;
   align-items: center;
+  padding-left: 10vh;
+}
+
+#name-btn {
+  /* padding-right:30px; */
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
 }
 
 .name-date {
@@ -20,11 +28,23 @@
   opacity: 0.6;
 }
 
-.name{
+.name {
   font-weight: bold;
 }
 
 #delete-btn {
   cursor: pointer;
-  border: none;
+  border: solid white 0.8px;
+}
+
+
+#post-image-id {
+  /* width: ; */
+  height: 40vh;
+  object-fit: cover;
+  /* max-height: 200px; */
+}
+
+.noimage {
+  display: none;
 }

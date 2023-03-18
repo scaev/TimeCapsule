@@ -16,3 +16,5 @@ export function deletePost(_id) {
 export function updatePost(postId, updatedPostData) {
   return sendRequest(`${BASE_URL}/${postId}`, "PUT", updatedPostData);
 }
+
+
